@@ -22,6 +22,9 @@ set softtabstop=4   " Sets the number of columns for a TAB.
 set expandtab       " Expand TABs to spaces.
 set autoindent
 syntax enable
+if $SSH_CONNECTION
+    let g:solarized_termtrans=1
+endif
 set background=dark
 colorscheme solarized
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
