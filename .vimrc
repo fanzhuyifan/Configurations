@@ -2,6 +2,11 @@ call plug#begin()
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp'] }
 call plug#end()
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+" if YouCompleteMe is not properly installed, check that
+" 1. ./install.py --clang-completer has been run
+" 2. If the above step failes, check that vim has python enabled (if not,
+" install python and then vim or install vim-gtk or vim-gnome
+" 3. If 1 fails, check that cmake is installed
 
 execute pathogen#infect()
 syntax on
