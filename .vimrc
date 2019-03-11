@@ -1,5 +1,7 @@
 call plug#begin()
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp'] }
+Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+Plug 'micha/vim-colors-solarized'
 call plug#end()
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1
@@ -9,7 +11,6 @@ let g:ycm_always_populate_location_list = 1
 " install python and then vim or install vim-gtk or vim-gnome
 " 3. If 1 fails, check that cmake is installed
 
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
