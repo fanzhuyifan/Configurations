@@ -1,3 +1,6 @@
+call plug#begin()
+Plug 'Valloric/YouCompleteMe'
+call plug#end()
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -72,3 +75,5 @@ augroup Binary
     au BufWritePost *.bin if &bin | %!xxd
     au BufWritePost *.bin set nomod | endif
 augroup END
+
+
