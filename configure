@@ -1,4 +1,7 @@
 #!/bin/bash
+rm ~/.vimrc
 ln -sfF ~/Configurations/.vimrc ~
+rm ~/.vim
 ln -sfF ~/Configurations/.vim ~
+rm ~/.config/fish
 ln -sfF ~/Configurations/fish ~/.config
