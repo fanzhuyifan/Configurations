@@ -1,3 +1,4 @@
 #!/bin/bash
-ln -s Configurations/.vimrc ~/.vimrc
-ln -s Configurations/.vim ~/.vim
+ln -sf ~/Configurations/.vimrc ~/.vimrc
+ln -sf ~/Configurations/.vim ~/.vim
+ln -sf ~/Configurations/fish ~/.config/fish
