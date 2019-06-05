@@ -1,6 +1,6 @@
 call plug#begin()
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp'] }
-Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+Plug 'vim-latex/vim-latex'
 Plug 'micha/vim-colors-solarized'
 call plug#end()
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
@@ -79,3 +79,8 @@ augroup Binary
     au BufWritePost *.bin if &bin | %!xxd
     au BufWritePost *.bin set nomod | endif
 augroup END
+
+let g:Tex_FoldedEnvironments = 'theorem,definition,proof,'
+let g:Tex_FoldedEnvironments .= 'verbatim,comment,eq,gather,'
+let g:Tex_FoldedEnvironments .= 'align,figure,table,thebibliography,'
+let g:Tex_FoldedEnvironments .= 'keywords,abstract,titlepage'
