@@ -38,6 +38,7 @@ if $SSH_CONNECTION
     let g:solarized_termtrans=1
 endif
 set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
 
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
