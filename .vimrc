@@ -1,5 +1,5 @@
 call plug#begin()
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp', 'python', 'python3'] }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp', 'python'] }
 Plug 'vim-latex/vim-latex'
 Plug 'micha/vim-colors-solarized'
 call plug#end()
