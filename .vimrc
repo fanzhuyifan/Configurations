@@ -1,5 +1,5 @@
 call plug#begin()
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp'] }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp', 'python', 'python3'] }
 Plug 'vim-latex/vim-latex'
 Plug 'micha/vim-colors-solarized'
 call plug#end()
@@ -81,7 +81,7 @@ augroup Binary
     au BufWritePost *.bin set nomod | endif
 augroup END
 
-let g:Tex_FoldedEnvironments = 'theorem,definition,proof,'
+let g:Tex_FoldedEnvironments = 'theorem,corollary,lemma,definition,proof,'
 let g:Tex_FoldedEnvironments .= 'verbatim,comment,eq,gather,'
 let g:Tex_FoldedEnvironments .= 'align,figure,table,thebibliography,'
 let g:Tex_FoldedEnvironments .= 'keywords,abstract,titlepage'
