@@ -1,7 +1,8 @@
 call plug#begin()
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp', 'python'] }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp', 'python', 'javascript'] }
 Plug 'vim-latex/vim-latex'
 Plug 'micha/vim-colors-solarized'
+Plug 'dhruvasagar/vim-table-mode'
 call plug#end()
 let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 let g:ycm_always_populate_location_list = 1
@@ -12,7 +13,6 @@ let g:ycm_always_populate_location_list = 1
 " 3. If 1 fails, check that cmake is installed
 
 syntax on
-filetype plugin indent on
 
 set hlsearch
 " Only do this part when compiled with support for autocommands.
@@ -63,9 +63,13 @@ let g:tex_indent_brace=0
 " all the figure labels. Very useful!
 set iskeyword+=:
 set guifont=Menlo\ Regular:h20
+autocmd FileType text setlocal formatoptions=ant2
+set formatoptions=tcrqo
+set spell
 set textwidth=80
 set linebreak
 set ruler
+set mouse=a
 set number
 set foldmethod=syntax
 
@@ -85,3 +89,6 @@ let g:Tex_FoldedEnvironments = 'theorem,corollary,lemma,definition,proof,'
 let g:Tex_FoldedEnvironments .= 'verbatim,comment,eq,gather,'
 let g:Tex_FoldedEnvironments .= 'align,figure,table,thebibliography,'
 let g:Tex_FoldedEnvironments .= 'keywords,abstract,titlepage'
+
+" Custom commands
+command Clean %s/\(^\)\@<!\([^ ]\)\@<=\(  \+\)\([^ ]\)\@=/ /g
