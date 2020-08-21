@@ -1,16 +1,9 @@
-call plug#begin()
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer',  'for': ['c', 'cpp', 'python', 'javascript'] }
-Plug 'vim-latex/vim-latex'
-Plug 'micha/vim-colors-solarized'
-Plug 'dhruvasagar/vim-table-mode'
+call plug#begin('~/.vim/plugged')
+
+Plug 'lervag/vimtex'
+Plug 'tpope/vim-surround'
+
 call plug#end()
-let g:ycm_global_ycm_extra_conf='~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-let g:ycm_always_populate_location_list = 1
-" if YouCompleteMe is not properly installed, check that
-" 1. ./install.py --clang-completer has been run
-" 2. If the above step failes, check that vim has python enabled (if not,
-" install python and then vim or install vim-gtk or vim-gnome
-" 3. If 1 fails, check that cmake is installed
 
 syntax on
 
@@ -39,7 +32,7 @@ if $SSH_CONNECTION
 endif
 set background=dark
 let g:solarized_termcolors=256
-colorscheme solarized
+"colorscheme solarized
 
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
@@ -56,12 +49,15 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 " this is mostly a matter of taste. but LaTeX looks good with just a bit
 " of indentation.
-set breakindent
-let g:tex_indent_brace=0
+"set breakindent
+"let g:tex_indent_brace=0
 " TIP: if you write your \label's as \label{fig:something}, then if you
 " type in \ref{fig: and press <C-n> you will automatically cycle through
 " all the figure labels. Very useful!
-set iskeyword+=:
+"set iskeyword+=:
+
+"let g:vimtex_indent_ignored_envs=["verbatim"]
+
 set guifont=Menlo\ Regular:h20
 autocmd FileType text setlocal formatoptions=ant2
 set formatoptions=tcrqo
@@ -70,6 +66,7 @@ set textwidth=80
 set linebreak
 set ruler
 set mouse=a
+set ttymouse=xterm2
 set number
 set foldmethod=syntax
 
@@ -84,11 +81,6 @@ augroup Binary
     au BufWritePost *.bin if &bin | %!xxd
     au BufWritePost *.bin set nomod | endif
 augroup END
-
-let g:Tex_FoldedEnvironments = 'theorem,corollary,lemma,definition,proof,'
-let g:Tex_FoldedEnvironments .= 'verbatim,comment,eq,gather,'
-let g:Tex_FoldedEnvironments .= 'align,figure,table,thebibliography,'
-let g:Tex_FoldedEnvironments .= 'keywords,abstract,titlepage'
 
 " Custom commands
 command Clean %s/\(^\)\@<!\([^ ]\)\@<=\(  \+\)\([^ ]\)\@=/ /g
